@@ -21,6 +21,7 @@ li {
   &.chat-right {
     flex-direction: row-reverse;
 
+
     & > .chat-avatar {
       margin-left: 20px;
       margin-right: 0;
@@ -28,6 +29,7 @@ li {
 
     & > .chat-text {
       text-align: right;
+      background: #8f98c2;
 
       &:before {
         right: -20px;
@@ -134,6 +136,7 @@ li {
 
   li .chat-text {
     font-size: .8rem;
+
   }
 
 }

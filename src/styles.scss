@@ -1,3 +1,8 @@
+body {
+  background: -webkit-linear-gradient(90deg, #567599,#1f2e4b);
+  background: linear-gradient(90deg, #567599,#1f2e4b);
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -13,3 +18,6 @@ ul {
   margin-bottom: 2rem;
   box-shadow: none;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
