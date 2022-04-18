@@ -1,5 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { BaseConversationModel } from '../../models/conversation.model';
+import { BaseConversationModel } from 'src/app/chat/model/conversation.model';
+
+
 
 @Pipe({
   name: 'filter',

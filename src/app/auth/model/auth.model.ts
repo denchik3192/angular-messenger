@@ -1,4 +1,4 @@
-import { UserModel } from './user.model';
+import { UserModel } from '../../core/models/user.model';
 
 export interface LoginRequestModel {
   username: string;

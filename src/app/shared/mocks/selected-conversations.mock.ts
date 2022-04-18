@@ -1,4 +1,5 @@
-import { SelectedConversationModel } from '../models/conversation.model';
+import { SelectedConversationModel } from "../../chat/model/conversation.model";
+
 
 export const selectedConversationsMock: SelectedConversationModel[] = [
   {

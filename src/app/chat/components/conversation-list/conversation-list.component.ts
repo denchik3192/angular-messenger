@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { conversationListMock } from '../../../mocks/conversation-list.mock';
-import { BaseConversationModel } from '../../../models/conversation.model';
+import { conversationListMock } from 'src/app/shared/mocks/conversation-list.mock';
+import { BaseConversationModel } from '../../model/conversation.model';
+
 
 @Component({
   selector: 'app-conversation-list',
@@ -11,9 +12,7 @@ export class ConversationListComponent implements OnInit {
   list = conversationListMock;
   searchTerm: string = '';
 
-  selectedConversationId: string = '';
-
-  @Output() selectConversation = new EventEmitter();
+  @Input() selectedConversationId: string | undefined;
 
   constructor() { }
 
@@ -22,7 +21,6 @@ export class ConversationListComponent implements OnInit {
 
   onSelectConversation(item: BaseConversationModel) {
     this.selectedConversationId = item.id;
-    this.selectConversation.emit(item);
   }
 
 }

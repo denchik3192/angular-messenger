@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ConversationMessageModel } from '../../../models/message.model';
-import { UserModel } from '../../../models/user.model';
-import { currentUserMock } from '../../../mocks/current-user.mock';
+
+import { UserModel } from '../../../core/models/user.model';
+import { currentUserMock } from '../../../shared/mocks/current-user.mock';
+import { ConversationMessageModel } from '../../model/message.model';
 
 @Component({
   selector: 'app-chat-message',

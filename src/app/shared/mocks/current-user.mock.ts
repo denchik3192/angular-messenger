@@ -1,4 +1,5 @@
-import { UserModel } from '../models/user.model';
+import { UserModel } from "src/app/core/models/user.model";
+
 
 export const currentUserMock: UserModel = {
   username: 'Steve Bangalter',

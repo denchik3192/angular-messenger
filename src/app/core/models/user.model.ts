@@ -4,4 +4,3 @@ export interface UserModel {
   id: string;
 }
 
-export type foo = 'a' | 'b';

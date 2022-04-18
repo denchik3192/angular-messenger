@@ -1,4 +1,5 @@
-import { BaseConversationModel } from '../models/conversation.model';
+import { BaseConversationModel } from "src/app/chat/model/conversation.model";
+
 
 export const conversationListMock: BaseConversationModel[] = [
   {

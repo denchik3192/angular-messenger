@@ -1,8 +1,12 @@
+
+
 import { Component } from '@angular/core';
-import { BaseConversationModel, SelectedConversationModel } from '../models/conversation.model';
-import { selectedConversationsMock } from '../mocks/selected-conversations.mock';
-import { MessageSendRequestModel } from '../models/message.model';
-import { currentUserMock } from '../mocks/current-user.mock';
+import { BaseConversationModel, SelectedConversationModel } from './chat/model/conversation.model';
+import { MessageSendRequestModel } from './chat/model/message.model';
+
+import { currentUserMock } from './shared/mocks/current-user.mock';
+import { selectedConversationsMock } from './shared/mocks/selected-conversations.mock';
+
 
 @Component({
   selector: 'app-root',
@@ -11,20 +15,6 @@ import { currentUserMock } from '../mocks/current-user.mock';
 })
 export class AppComponent {
   title = 'angular-messenger';
-  selectedConversation: SelectedConversationModel | undefined;
 
-  onSelectConversation(conversation: BaseConversationModel) {
-    this.selectedConversation = selectedConversationsMock.find(item => item.id === conversation.id);
-  }
-
-  onPostMessage(newMessage: MessageSendRequestModel) {
-    this.selectedConversation?.messages.push({
-      recipient: newMessage.recipient,
-      sender: currentUserMock.id,
-      timestamp: new Date().toISOString(),
-      message: newMessage.message,
-      id: '111222',
-    },)
-  }
 
 }
