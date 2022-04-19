@@ -8,6 +8,7 @@
         *ngFor="let message of selectedConversation.messages"
         [message]="message"
         [user]="getUser(message)"
+        [currentUser]="currentUser"
       >
 
       </app-chat-message>

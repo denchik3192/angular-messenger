@@ -4,3 +4,6 @@ export interface UserModel {
   id: string;
 }
 
+export interface UserSearchResponseModel {
+  users: UserModel[];
+}

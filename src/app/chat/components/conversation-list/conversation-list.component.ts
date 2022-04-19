@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { conversationListMock } from 'src/app/shared/mocks/conversation-list.mock';
 import { BaseConversationModel } from '../../model/conversation.model';
 
 
@@ -9,9 +8,9 @@ import { BaseConversationModel } from '../../model/conversation.model';
   styleUrls: ['./conversation-list.component.scss']
 })
 export class ConversationListComponent implements OnInit {
-  list = conversationListMock;
   searchTerm: string = '';
 
+  @Input() list: BaseConversationModel[] = [];
   @Input() selectedConversationId: string | undefined;
 
   constructor() { }

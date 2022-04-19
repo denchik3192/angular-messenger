@@ -25,7 +25,7 @@ import { ChatPageComponent } from './pages/chat-page/chat-page.component';
     CommonModule,
     ChatRoutingModule,
     FormsModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class ChatModule { }

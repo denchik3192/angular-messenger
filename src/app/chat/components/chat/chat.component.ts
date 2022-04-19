@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { UserModel } from 'src/app/core/models/user.model';
 import { SelectedConversationModel } from '../../model/conversation.model';
 import { ConversationMessageModel, MessageSendRequestModel } from '../../model/message.model';
 
@@ -10,6 +11,7 @@ import { ConversationMessageModel, MessageSendRequestModel } from '../../model/m
 })
 export class ChatComponent implements OnInit {
   @Input() selectedConversation: SelectedConversationModel | undefined;
+  @Input() currentUser:UserModel | undefined;
   @Output() postMessage = new EventEmitter<MessageSendRequestModel>();
 
   newMessage: string = '';

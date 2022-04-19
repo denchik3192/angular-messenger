@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { UserModel } from '../../../core/models/user.model';
-import { currentUserMock } from '../../../shared/mocks/current-user.mock';
+
 import { ConversationMessageModel } from '../../model/message.model';
 
 @Component({
@@ -12,8 +12,7 @@ import { ConversationMessageModel } from '../../model/message.model';
 export class ChatMessageComponent implements OnInit {
   @Input() message: ConversationMessageModel | undefined;
   @Input() user: UserModel | undefined;
-
-  currentUser = currentUserMock;
+  @Input() currentUser: UserModel | undefined;
 
   constructor() { }
 
