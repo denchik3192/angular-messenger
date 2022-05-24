@@ -10,7 +10,7 @@ import { ConversationMessageModel, MessageSendRequestModel } from '../../model/m
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
-  @Input() selectedConversation: SelectedConversationModel | undefined;
+  @Input() selectedConversation!: SelectedConversationModel | undefined;
   @Input() currentUser:UserModel | undefined;
   @Output() postMessage = new EventEmitter<MessageSendRequestModel>();
 
@@ -28,7 +28,7 @@ export class ChatComponent implements OnInit {
   onPostMessage() {
     this.postMessage.emit({
       message: this.newMessage,
-      recipient: this.selectedConversation?.participants[1].id || ''
+      recipient: this.selectedConversation?.participants[0].id || ''
     });
     this.newMessage = '';
   }

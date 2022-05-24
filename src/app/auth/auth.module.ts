@@ -3,15 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { SignInPageComponent } from './page/sign-in-page/sign-in-page.component';
+import { SignUpPageComponent } from './page/sign-up-page/sign-up-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    SignInPageComponent
+    SignInPageComponent,
+    SignUpPageComponent
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class AuthModule { }

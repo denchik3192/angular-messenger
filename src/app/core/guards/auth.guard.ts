@@ -1,13 +1,14 @@
+import { UserService } from 'src/app/core/service/user.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { map, Observable, take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate, CanLoad {
 
-  constructor(private router: Router ) {
+  constructor(private router: Router, private userService: UserService ) {
   }
 
   canActivate(
@@ -23,9 +24,9 @@ export class AuthGuard implements CanActivate, CanLoad {
   }
 
   handle() {
-    const isNavigationAllowed = true;
-
-    return isNavigationAllowed || this.router.parseUrl('/auth/sign-in'); //create url Tree, also can use parseUrl
+    return this.userService.currentUser$.pipe(
+      take(1),
+      map(user => user !== null ? true : this.router.parseUrl('/auth/sign-in'))
+    )
   }
-
 }

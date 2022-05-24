@@ -1,3 +1,5 @@
+import { map } from 'rxjs';
+import { UserService } from 'src/app/core/service/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  isLoggedIn$ = this.userService.currentUser$.pipe(
+    map(user => !!user)
+  );
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }

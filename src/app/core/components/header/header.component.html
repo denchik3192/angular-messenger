@@ -3,6 +3,22 @@
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
       <h5 class="title">Angular Messenger</h5>
     </div>
+
+    <ul class="navbar-nav d-flex flex-row" *ngIf="isLoggedIn$ | async">
+      <li class="nav-item">
+        <a routerLink="/auth/sign-in" class="nav-link">Sign in</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/auth/sign-up" class="nav-link">Sign up</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav" *ngIf="isLoggedIn$ | async">
+      <li class="nav-item">
+        <button class="nav-link">Logout</button>
+      </li>
+    </ul>
+
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12"></div>
   </div>
 </div>
